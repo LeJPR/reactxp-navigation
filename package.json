@@ -1,0 +1,27 @@
+{
+  "name": "reactxp-navigation",
+  "version": "0.0.1",
+  "description": "Plugin for ReactXP that provides react-navigation for all platforms",
+  "author": "lejpr",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel --presets react,es2015 --plugins transform-object-rest-spread,transform-es2015-arrow-functions,transform-class-properties -d dist/ src/"
+  },
+  "dependencies": {
+    "react-navigation": "1.0.0-beta.11",
+    "reactxp-animation": "https://github.com/LeJPR/reactxp-animation.git"
+  },
+  "peerDependencies": {
+    "react-dom": "^15.3.1",
+    "react-native": "^0.34.0",
+    "reactxp": "^0.34.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}

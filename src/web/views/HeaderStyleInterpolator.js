@@ -1,0 +1,60 @@
+/* @flow */
+
+/**
+ * Utility that builds the style for the navigation header.
+ *
+ * +-------------+-------------+-------------+
+ * |             |             |             |
+ * |    Left     |   Title     |   Right     |
+ * |  Component  |  Component  | Component   |
+ * |             |             |             |
+ * +-------------+-------------+-------------+
+ */
+
+function forLeft(props) {
+  
+  const { position, scene } = props;
+  const { index } = scene;
+  return {
+     opacity: position.interpolate({
+      inputRange: [index - 1, index - 0.5, index, index + 0.5, index + 1],
+      outputRange: ([0, 0, 1, 0, 0]),
+    }),
+  };
+}
+
+function forCenter(props) {
+  const { opacity, position, scene } = props;
+  const { index } = scene;
+  return {
+    opacity: position.interpolate({
+      inputRange: [index - 1, index, index + 1],
+      outputRange: ([0, 1, 0]),
+    }),
+    transform: [
+      {
+        translateX: position.interpolate({
+          inputRange: [index - 1, index + 1],
+          outputRange:  ([200, -200]),
+        }),
+      },
+    ],
+  };
+}
+
+function forRight(props) {
+  const { position, scene } = props;
+  const { index } = scene;
+  return {
+    opacity: position.interpolate({
+      inputRange: [index - 1, index, index + 1],
+      outputRange: ([0, 1, 0]),
+    }),
+  };
+}
+
+module.exports = {
+  forLeft,
+  forCenter,
+  forRight,
+};
