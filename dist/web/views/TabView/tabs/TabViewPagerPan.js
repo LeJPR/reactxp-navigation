@@ -207,11 +207,8 @@ var TabViewPagerPan = function (_Component) {
         inputRange: inputRange,
         outputRange: outputRange
       });
-      var opacity = position.interpolate({
-        inputRange: inputRange,
-        outputRange: [1, 1, 1]
-      });
-      var animStyle = { width: routes.length * width, opacity: opacity, transform: [{ translateX: translateX }] };
+
+      var animStyle = { width: routes.length * width, transform: [{ translateX: translateX }] };
       //{...this._panResponder.panHandlers}
       return React.createElement(
         Animated.View,

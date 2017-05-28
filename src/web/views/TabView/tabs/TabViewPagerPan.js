@@ -196,11 +196,8 @@ class TabViewPagerPan extends Component {
       inputRange,
       outputRange,
     });
-   var opacity = position.interpolate({
-            inputRange: inputRange,
-            outputRange: [1,1,1]
-        });
-   var animStyle = {width: routes.length * width, opacity:opacity,transform: [{ translateX: translateX }]};
+
+   var animStyle = {width: routes.length * width,transform: [{ translateX: translateX }]};
 //{...this._panResponder.panHandlers}
     return (
       <Animated.View
